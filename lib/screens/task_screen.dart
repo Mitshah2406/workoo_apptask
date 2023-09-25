@@ -152,15 +152,14 @@ class TasksScreen extends StatelessWidget {
                     height: 12,
                   ),
                   const Divider(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        InkWell(
-                          onTap: () {},
-                          child: const Text(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      InkWell(
+                        onTap: () {},
+                        child: const Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Text(
                             "Chat",
                             style: TextStyle(
                               fontSize: 14,
@@ -169,16 +168,21 @@ class TasksScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Container(
-                          decoration: const BoxDecoration(
-                              border: Border(
-                                  left: BorderSide(
-                                      width: 1, color: Colors.black54))),
-                          child: const Text(""),
-                        ),
-                        InkWell(
-                          onTap: () {},
-                          child: const Text(
+                      ),
+                      Container(
+                        decoration: const BoxDecoration(
+                            border: Border(
+                                left: BorderSide(
+                                    width: 1, color: Colors.black54))),
+                        child: const Text(""),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          print("hello");
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Text(
                             "Chat",
                             style: TextStyle(
                               fontSize: 14,
@@ -187,8 +191,8 @@ class TasksScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   const SizedBox(
                     height: 6,

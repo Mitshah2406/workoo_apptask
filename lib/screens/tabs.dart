@@ -45,7 +45,9 @@ class Tabs extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           gap: 4,
           style: GnavStyle.oldSchool,
-          curve: Curves.linear,
+          curve: Curves.easeInOut,
+          rippleColor: const Color.fromARGB(255, 221, 209, 253).withOpacity(.3),
+          duration: const Duration(seconds: 1),
           textSize: 12,
           tabs: [
             GButton(
