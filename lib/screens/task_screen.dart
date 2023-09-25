@@ -66,81 +66,135 @@ class TasksScreen extends StatelessWidget {
         ),
         child: ListView.builder(
           itemCount: 1,
-          itemBuilder: (ctx, index) => Container(
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(221, 161, 157, 157),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text("Wait in line"),
-                const SizedBox(
-                  height: 12,
-                ),
-                const Row(
-                  children: [
-                    Expanded(
-                      child: Column(
+          itemBuilder: (ctx, index) => Card(
+            elevation: 4,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  const Text(
+                    "Wait in line",
+                    style: TextStyle(fontSize: 14, color: Colors.black54),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  const Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  FontAwesomeIcons.calendar,
+                                  color: Colors.black54,
+                                ),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Text(
+                                  "Friday- May 27, 2022",
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black54),
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Row(
+                              children: [
+                                Icon(FontAwesomeIcons.clockRotateLeft,
+                                    color: Colors.black54),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Text(
+                                  "9:30 AM",
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black54),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      Column(
                         children: [
-                          Row(
-                            children: [
-                              Icon(FontAwesomeIcons.calendar),
-                              SizedBox(
-                                width: 6,
-                              ),
-                              Text("Friday- May 27, 2022")
-                            ],
+                          CircleAvatar(
+                            radius: 30,
+                            foregroundImage:
+                                AssetImage("assets/images/john_doe.jpeg"),
                           ),
-                          Row(
-                            children: [
-                              Icon(FontAwesomeIcons.clockRotateLeft),
-                              SizedBox(
-                                width: 6,
-                              ),
-                              Text("9:30 AM")
-                            ],
+                          SizedBox(
+                            height: 6,
+                          ),
+                          Text(
+                            "John Doe",
+                            style:
+                                TextStyle(fontSize: 14, color: Colors.black54),
                           )
                         ],
                       ),
-                    ),
-                    Column(
-                      children: [
-                        CircleAvatar(
-                          foregroundImage:
-                              AssetImage("assets/images/john_doe.jpeg"),
-                        ),
-                        SizedBox(
-                          height: 6,
-                        ),
-                        Text("John Doe")
-                      ],
-                    ),
-                  ],
-                ),
-                const Divider(),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          print("hello");
-                        },
-                        child: const Text("Chat"),
-                      ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: const Text("Chat"),
-                      ),
                     ],
                   ),
-                )
-              ],
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  const Divider(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        InkWell(
+                          onTap: () {},
+                          child: const Text(
+                            "Chat",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Color(0xff6750A4),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: const BoxDecoration(
+                              border: Border(
+                                  left: BorderSide(
+                                      width: 1, color: Colors.black54))),
+                          child: const Text(""),
+                        ),
+                        InkWell(
+                          onTap: () {},
+                          child: const Text(
+                            "Chat",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Color(0xff6750A4),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  )
+                ],
+              ),
             ),
           ),
         ),
